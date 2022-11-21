@@ -18,6 +18,10 @@ const opponentGame = document.querySelector('.opponent-game');
 let html = '';
 let playerSelected = false;
 let opponentSelected = false;
+//
+playerGame.style.display = "none";
+opponentGame.style.display = "none";
+
 //add event listner for player select
 slardarThumb.addEventListener('click', (e) => {
     html = ''
@@ -111,8 +115,11 @@ const dice = {
 // let playerSum = 0;
 // let opponentSum = 0;
 //event listener on the roll dice button and adding function capabilities
-let rolls = [];
+let playerRolls = [];
+let opponentRolls = [];
 playButton.addEventListener('click', function(){
+    playerGame.style.display = "block";
+    opponentGame.style.display = "block";
     htmlPlayer = '';
     htmlOpponent = '';
     let dice1 = Math.floor(Math.random() * 6) + 1;
@@ -120,21 +127,24 @@ playButton.addEventListener('click', function(){
     let dice3 = Math.floor(Math.random() * 6) + 1;
     let dice4 = Math.floor(Math.random() * 6) + 1;
     let playerOneScore = dice1 + dice2;
-    rolls.push(dice1);
-    rolls.push(dice2);
-    let playerOneTotalScore = rolls.reduce((a,b) => a + b, 0);
+    let opponentScore = dice3 + dice4;
+    playerRolls.push(dice1);
+    playerRolls.push(dice2);
+    opponentRolls.push(dice3);
+    opponentRolls.push(dice4);
+    let playerOneTotalScore = playerRolls.reduce((a,b) => a + b, 0);
+    let opponentTotalScore = opponentRolls.reduce((a,b) => a + b, 0);
     htmlPlayer += `<img class="dice" src="images/dice${dice1}.png">`
     htmlPlayer += `<img class="dice" src="images/dice${dice2}.png">`
     htmlPlayer += `<p>Round Score = ${playerOneScore}</p>`
     htmlPlayer += `<p>Total Score = ${playerOneTotalScore}.</p>`
     htmlOpponent += `<img class="dice" src="images/dice${dice3}.png">`
     htmlOpponent += `<img class="dice" src="images/dice${dice4}.png">`
+    htmlOpponent += `<p>Round Score = ${opponentScore}.</p>`
+    htmlOpponent += `<p>Total Score = ${opponentTotalScore}.</p>`
     playerGame.innerHTML = htmlPlayer;
     opponentGame.innerHTML = htmlOpponent;
     console.log(dice1);
-    console.log(rolls)
-    console.log(rolls.reduce((a,b) => a + b, 0));
-    return dice1;
+   
 });
 
-console.log(rolls);
