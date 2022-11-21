@@ -111,24 +111,28 @@ const dice = {
 // let playerSum = 0;
 // let opponentSum = 0;
 //event listener on the roll dice button and adding function capabilities
+let rolls = [];
 playButton.addEventListener('click', function(){
-    let playerSum;
     htmlPlayer = '';
     htmlOpponent = '';
     let dice1 = Math.floor(Math.random() * 6) + 1;
     let dice2 = Math.floor(Math.random() * 6) + 1;
     let dice3 = Math.floor(Math.random() * 6) + 1;
     let dice4 = Math.floor(Math.random() * 6) + 1;
-    playerSum += dice1;
+    rolls.push(dice1);
+    rolls.push(dice2);
+    let playerOneScore = dice1 + dice2;
     htmlPlayer += `<img class="dice" src="images/dice${dice1}.png">`
     htmlPlayer += `<img class="dice" src="images/dice${dice2}.png">`
+    htmlPlayer += `<p>Round Score = ${playerOneScore}</p>`
     htmlOpponent += `<img class="dice" src="images/dice${dice3}.png">`
     htmlOpponent += `<img class="dice" src="images/dice${dice4}.png">`
     playerGame.innerHTML = htmlPlayer;
     opponentGame.innerHTML = htmlOpponent;
     console.log(dice1);
-    console.log(playerSum);
+    console.log(rolls)
+    console.log(rolls.reduce((a,b) => a + b, 0));
     return dice1;
 });
 
-console.log(playerSum);
+console.log(rolls);
