@@ -8,12 +8,23 @@ img{
     height: auto;
 }
 
+.player-game{
+    background-color: lightgreen;
+    padding: 10px;
+    border: 1px solid black;
+}
 
-.play-button{
-    visibility: hidden;
-    width: 100px;
-    height: 80px;
+
+.dice{
+    max-width: 100px;
+    height: auto;
+}
+
+.roll-dice{
+    width: 60px;
+    height: 60px;
     background-color: cornflowerblue;
+    
 }
 
 .reset{
