@@ -1,3 +1,11 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   margin: 0;
   background-color: rgb(74, 73, 85);
@@ -38,6 +46,15 @@ p {
   width: 60px;
   height: 60px;
   background-color: cornflowerblue;
+}
+
+.play-button {
+  background-image: linear-gradient(to right, purple, blue, yellow);
+  display: block;
+  width: 100%;
+  color: whitesmoke;
+  font-weight: 700;
+  padding: 10px;
 }
 
 .reset {
@@ -102,6 +119,24 @@ p {
   height: 127px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.winner {
+  border: solid 3px white;
+  background-color: purple;
+  top: 30%;
+  left: 35%;
+  position: fixed;
+  height: 200px;
+  max-width: 50%;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 1s linear;
+  font-size: x-large;
+}
+
+.midway-line {
+  width: 100%;
 }
 
 #wrapper {

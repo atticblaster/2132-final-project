@@ -1,6 +1,15 @@
 // @mixin player-portrait($xoffset, $yoffset, $rounded-corners, $border-color){
 //     box-shadow:
 // }
+html {
+    box-sizing: border-box;
+    }
+    
+*, *:before, *:after {
+    box-sizing: inherit;
+    }
+
+
 
 body{
     margin: 0;
@@ -43,6 +52,15 @@ p{
     height: 60px;
     background-color: cornflowerblue;
     
+}
+
+.play-button{
+    background-image: linear-gradient(to right, purple, blue, yellow, );
+    display: block;
+    width: 100%;
+    color: whitesmoke;
+    font-weight: 700;
+    padding: 10px;
 }
 
 .reset{
@@ -111,6 +129,28 @@ p{
     height: 127px;
     object-fit: cover;
 }
+
+.winner{
+    border: solid 3px white;
+    background-color: purple;
+    top:30%;
+    left:35%;
+    position :fixed;
+    height :200px;
+    max-width :50%;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s linear;
+    font-size: x-large;
+}
+
+.midway-line{
+    // background-image: linear-gradient(to right, purple, blue, yellow, );
+    // background-color: #8c2f39;
+    // display: block;
+    width: 100%;
+}
+
 
 #wrapper{
     display: flex;

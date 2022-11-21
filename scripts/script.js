@@ -14,8 +14,13 @@ const playButton = document.querySelector('.play-button');
 const playerGame = document.querySelector('.player-game');
 const opponentGame = document.querySelector('.opponent-game');
 
+//game over
+const gameOver = document.querySelector('.game-over');
+const winner = document.querySelector('.winner');
 
 let html = '';
+let htmlPlayer = '';
+let htmlOpponent = ''; 
 let playerSelected = false;
 let opponentSelected = false;
 //
@@ -117,7 +122,9 @@ const dice = {
 //event listener on the roll dice button and adding function capabilities
 let playerRolls = [];
 let opponentRolls = [];
+let roundCount = 0;
 playButton.addEventListener('click', function(){
+    roundCount ++;
     playerGame.style.display = "block";
     opponentGame.style.display = "block";
     htmlPlayer = '';
@@ -127,24 +134,54 @@ playButton.addEventListener('click', function(){
     let dice3 = Math.floor(Math.random() * 6) + 1;
     let dice4 = Math.floor(Math.random() * 6) + 1;
     let playerOneScore = dice1 + dice2;
+    if(dice1 == 1 || dice2 == 1){
+        playerOneScore = 0;
+       
+    };
+    if(dice1 == dice2){
+        playerOneScore = (dice1 + dice2) * 2;
+    }
     let opponentScore = dice3 + dice4;
-    playerRolls.push(dice1);
-    playerRolls.push(dice2);
-    opponentRolls.push(dice3);
-    opponentRolls.push(dice4);
+    if(dice3 == 1 || dice4 == 1){
+        opponentScore = 0;
+       
+    }
+    if(dice3 == dice4){
+        opponentScore = (dice3 + dice4) * 2;
+    }
+    playerRolls.push(playerOneScore);
+    opponentRolls.push(opponentScore);
     let playerOneTotalScore = playerRolls.reduce((a,b) => a + b, 0);
     let opponentTotalScore = opponentRolls.reduce((a,b) => a + b, 0);
     htmlPlayer += `<img class="dice" src="images/dice${dice1}.png">`
     htmlPlayer += `<img class="dice" src="images/dice${dice2}.png">`
     htmlPlayer += `<p>Round Score = ${playerOneScore}</p>`
-    htmlPlayer += `<p>Total Score = ${playerOneTotalScore}.</p>`
+    htmlPlayer += `<p><strong>Total Score = ${playerOneTotalScore}</strong></p>`
     htmlOpponent += `<img class="dice" src="images/dice${dice3}.png">`
     htmlOpponent += `<img class="dice" src="images/dice${dice4}.png">`
     htmlOpponent += `<p>Round Score = ${opponentScore}.</p>`
-    htmlOpponent += `<p>Total Score = ${opponentTotalScore}.</p>`
+    htmlOpponent += `<p><strong>Total Score = ${opponentTotalScore}</strong></p>`
     playerGame.innerHTML = htmlPlayer;
     opponentGame.innerHTML = htmlOpponent;
-    console.log(dice1);
-   
+    let victor = '';
+    if(playerOneTotalScore > opponentTotalScore){
+        victor = playerOneTotalScore;
+    } else if (opponentTotalScore > playerOneTotalScore){
+        victor = opponentTotalScore;
+    } 
+    if(roundCount == 3){
+        winner.style.visibility = "visible";
+        winner.style.opacity = "0.9";
+        playButton.style.display = "none";
+        console.log('Heres round 3');
+        
+        if(victor == playerOneTotalScore){
+            winner.innerHTML += `<p>Player One is victorius and finished with ${playerOneTotalScore} points. The opponent finished with ${opponentTotalScore} points.</p>`
+        } else if(victor == opponentTotalScore){
+            winner.innerHTML += `<p>The Opponent is victorius and finished with ${opponentTotalScore} points. Player One finished with ${playerOneTotalScore} points.</p>`
+        } else{
+            winner.innerHTML += `<p>We finished with a draw - wow! Player One finished with ${playerOneTotalScore} points and the Opponent finished with ${opponentTotalScore} points.</p>`
+        }
+    }
 });
 
