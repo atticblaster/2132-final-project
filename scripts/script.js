@@ -119,12 +119,14 @@ playButton.addEventListener('click', function(){
     let dice2 = Math.floor(Math.random() * 6) + 1;
     let dice3 = Math.floor(Math.random() * 6) + 1;
     let dice4 = Math.floor(Math.random() * 6) + 1;
+    let playerOneScore = dice1 + dice2;
     rolls.push(dice1);
     rolls.push(dice2);
-    let playerOneScore = dice1 + dice2;
+    let playerOneTotalScore = rolls.reduce((a,b) => a + b, 0);
     htmlPlayer += `<img class="dice" src="images/dice${dice1}.png">`
     htmlPlayer += `<img class="dice" src="images/dice${dice2}.png">`
     htmlPlayer += `<p>Round Score = ${playerOneScore}</p>`
+    htmlPlayer += `<p>Total Score = ${playerOneTotalScore}.</p>`
     htmlOpponent += `<img class="dice" src="images/dice${dice3}.png">`
     htmlOpponent += `<img class="dice" src="images/dice${dice4}.png">`
     playerGame.innerHTML = htmlPlayer;
