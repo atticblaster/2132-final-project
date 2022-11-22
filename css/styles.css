@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
 }
 
 *, *:before, *:after {
@@ -26,7 +27,7 @@ img {
 
 p {
   margin: 0;
-  padding: 0;
+  padding: 10px;
 }
 
 h3 {
@@ -83,6 +84,8 @@ footer {
   color: #f7ede2;
   font-weight: 700;
   padding: 10px;
+  letter-spacing: 7.22px;
+  cursor: pointer;
 }
 
 .reset {
@@ -93,11 +96,13 @@ footer {
 }
 
 .player {
+  box-shadow: 2px 2px 5px white;
+  border: 2px solid goldenrod;
+  border-radius: 12px;
   max-width: 200px;
   height: 250px;
   justify-content: center;
   align-items: flex-end;
-  padding: 10px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -128,6 +133,7 @@ footer {
   padding: 10px;
   border-radius: 12px;
   margin-bottom: 4px;
+  justify-content: space-around;
 }
 
 .opponent-select {
@@ -139,6 +145,7 @@ footer {
   border-radius: 12px;
   margin-top: 4px;
   padding: 10px;
+  justify-content: space-around;
 }
 
 .container {
@@ -154,30 +161,41 @@ footer {
   height: 127px;
   -o-object-fit: cover;
      object-fit: cover;
+  border: 1px solid black;
+  border-radius: 20px;
 }
 
 .winner {
   border: solid 3px white;
-  background-color: purple;
+  background-color: #D6C3C9;
+  border-radius: 11px;
+  color: #07090F;
   top: 30%;
   left: 35%;
   position: fixed;
-  height: 200px;
-  max-width: 50%;
+  height: auto;
+  max-width: 45%;
   visibility: hidden;
   opacity: 0;
   transition: opacity 1s linear;
   font-size: x-large;
-  padding: 8px 20px 8px 8px;
+  padding: 8px 30px 8px 8px;
 }
 
 .close-pop-up {
   position: absolute;
-  right: 5px;
+  right: 3px;
+  top: 3px;
+  border: 2px solid rgb(209, 121, 20);
+  border-radius: 15px;
 }
 
 .midway-line {
   width: 100%;
+}
+
+.start-select {
+  color: blanchedalmond;
 }
 
 #wrapper {

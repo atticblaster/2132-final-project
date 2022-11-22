@@ -116,13 +116,12 @@ const dice = {
     }
 }
 
-// playButton.addEventListener('click', dice.rollDice());
-// let playerSum = 0;
-// let opponentSum = 0;
+
 //event listener on the roll dice button and adding function capabilities
 let playerRolls = [];
 let opponentRolls = [];
 let roundCount = 0;
+//roll dice function
 playButton.addEventListener('click', function(){
     roundCount ++;
     playerGame.style.display = "block";
@@ -134,20 +133,18 @@ playButton.addEventListener('click', function(){
     let dice3 = Math.floor(Math.random() * 6) + 1;
     let dice4 = Math.floor(Math.random() * 6) + 1;
     let playerOneScore = dice1 + dice2;
-    if(dice1 == 1 || dice2 == 1){
-        playerOneScore = 0;
-       
-    };
     if(dice1 == dice2){
         playerOneScore = (dice1 + dice2) * 2;
     }
+    if(dice1 == 1 || dice2 == 1){
+        playerOneScore = 0;   
+    };
     let opponentScore = dice3 + dice4;
-    if(dice3 == 1 || dice4 == 1){
-        opponentScore = 0;
-       
-    }
     if(dice3 == dice4){
         opponentScore = (dice3 + dice4) * 2;
+    }
+    if(dice3 == 1 || dice4 == 1){
+        opponentScore = 0;
     }
     playerRolls.push(playerOneScore);
     opponentRolls.push(opponentScore);
@@ -171,19 +168,18 @@ playButton.addEventListener('click', function(){
     } 
     if(roundCount == 3){
         winner.style.visibility = "visible";
-        winner.style.opacity = "0.9";
+        winner.style.opacity = "0.94";
         playButton.style.display = "none";
         console.log('Heres round 3');
         
         if(victor == playerOneTotalScore){
-            winner.innerHTML += `<p><button class="close-pop-up" onClick="window.location.reload();">✖</button>"Player One is victorius and finished with ${playerOneTotalScore} points. The opponent finished with ${opponentTotalScore} points.</p>`
+            winner.innerHTML += `<p><button class="close-pop-up" onClick="window.location.reload();">❌</button>Player One is victorius and finished with ${playerOneTotalScore} points!! The opponent finished with ${opponentTotalScore} points. Click the "X" to start a new game.</p>`
         } else if(victor == opponentTotalScore){
-            winner.innerHTML += `<p><button class="close-pop-up" onClick="window.location.reload();">✖</button>The Opponent is victorius and finished with ${opponentTotalScore} points. Player One finished with ${playerOneTotalScore} points.</p>`
+            winner.innerHTML += `<p><button class="close-pop-up" onClick="window.location.reload();">❌</button>The Opponent is victorius and finished with ${opponentTotalScore} points!! Player One finished with ${playerOneTotalScore} points. Click the "X" to start a new game.</p>`
         } else{
-            winner.innerHTML += `<p><button class="close-pop-up" onClick="window.location.reload();">✖</button>We finished with a draw - wow! Player One finished with ${playerOneTotalScore} points and the Opponent finished with ${opponentTotalScore} points.</p>`
+            winner.innerHTML += `<p><button class="close-pop-up" onClick="window.location.reload();">❌</button>We finished with a draw - wow! Player One finished with ${playerOneTotalScore} points and the Opponent finished with ${opponentTotalScore} points. Click the "X" to start a new game.</p>`
         }
-        // const closePopup = document.querySelector('.close-pop-up');
-        // closePopup.addEventListener('click',onClick="window.location.reload();" )
+        
     }
 });
 
