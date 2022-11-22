@@ -1,6 +1,10 @@
 // @mixin player-portrait($xoffset, $yoffset, $rounded-corners, $border-color){
 //     box-shadow:
 // }
+//sass variables
+$player_one_color: #84a59d;
+$opponent_color: #8a3033;
+
 html {
     box-sizing: border-box;
     }
@@ -10,10 +14,16 @@ html {
     }
 
 
+h1{
+    color: #f7ede2;
+    padding-left: 10px;
+}
 
 body{
     margin: 0;
     background-color: rgb(74, 73, 85);
+    background-image: url('../images/lycan.jpg');
+    // border: solid 1 px black;
 }
 
 img{
@@ -28,11 +38,32 @@ p{
     padding: 0;
 }
 
+h3{
+    background-color: #f7ede2;
+    height: 40px;
+    border-radius: 8px;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: solid 1px black;
+}
+
+main{
+    flex: 1;
+}
+
+footer{
+    background-color: whitesmoke;
+    padding: 20px;
+    border-top: solid 1px black;
+}
+
 .player-game{
-    background-color: lightgreen;
+    background-color: rgb(51, 124, 33);
     padding: 10px;
     border: 1px solid black;
     margin: 0;
+    border-bottom: 0;
 }
 
 .opponent-game{
@@ -40,6 +71,7 @@ p{
     padding: 10px;
     border: 1px solid black;
     margin: 0;
+    border-top: 0;
 }
 
 .dice{
@@ -58,7 +90,7 @@ p{
     background-image: linear-gradient(to right, purple, blue, yellow, );
     display: block;
     width: 100%;
-    color: whitesmoke;
+    color: #f7ede2;
     font-weight: 700;
     padding: 10px;
 }
@@ -83,7 +115,7 @@ p{
 
 
 .player-side{
-    background-color: rgb(84, 173, 84);
+    background-color: $player_one_color;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -91,7 +123,7 @@ p{
 }
 
 .opponent-side{
-    background-color: #8c2f39;
+    background-color: $opponent_color;
     display: flex;
     flex-direction: row-reverse;
     align-items: flex-start;
@@ -100,12 +132,15 @@ p{
 
 
 .player-select{
-    border: 2px solid goldenrod;
+    border: 2px solid rgb(100, 218, 32);
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 0;
     max-width: 60%;
     align-items: flex-end;
+    padding: 10px;
+    border-radius: 12px;
+    margin-bottom: 4px;
     // flex: 2;
 }
 
@@ -115,6 +150,9 @@ p{
     flex-wrap: wrap;
     max-width: 60%;
     flex: 2;
+    border-radius: 12px;
+    margin-top: 4px;
+    padding: 10px;
 }
 
 .container{
@@ -122,6 +160,7 @@ p{
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    margin: 0;
 }
 
 .thumbs{
@@ -142,6 +181,12 @@ p{
     opacity: 0;
     transition: opacity 1s linear;
     font-size: x-large;
+    padding: 8px 20px 8px 8px;
+}
+
+.close-pop-up{
+    position: absolute;
+    right: 5px;
 }
 
 .midway-line{
@@ -155,8 +200,10 @@ p{
 #wrapper{
     display: flex;
     flex-direction: column;
-    max-width: 1024px;
+    max-width: 864px;
     margin: auto;
-    background-color: gray;
+    background-color: #2e294e;
+    min-height: 100vh;
+    border: solid 1px black;
     
 }

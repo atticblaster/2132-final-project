@@ -176,12 +176,14 @@ playButton.addEventListener('click', function(){
         console.log('Heres round 3');
         
         if(victor == playerOneTotalScore){
-            winner.innerHTML += `<p>Player One is victorius and finished with ${playerOneTotalScore} points. The opponent finished with ${opponentTotalScore} points.</p>`
+            winner.innerHTML += `<p><button class="close-pop-up" onClick="window.location.reload();">✖</button>"Player One is victorius and finished with ${playerOneTotalScore} points. The opponent finished with ${opponentTotalScore} points.</p>`
         } else if(victor == opponentTotalScore){
-            winner.innerHTML += `<p>The Opponent is victorius and finished with ${opponentTotalScore} points. Player One finished with ${playerOneTotalScore} points.</p>`
+            winner.innerHTML += `<p><button class="close-pop-up" onClick="window.location.reload();">✖</button>The Opponent is victorius and finished with ${opponentTotalScore} points. Player One finished with ${playerOneTotalScore} points.</p>`
         } else{
-            winner.innerHTML += `<p>We finished with a draw - wow! Player One finished with ${playerOneTotalScore} points and the Opponent finished with ${opponentTotalScore} points.</p>`
+            winner.innerHTML += `<p><button class="close-pop-up" onClick="window.location.reload();">✖</button>We finished with a draw - wow! Player One finished with ${playerOneTotalScore} points and the Opponent finished with ${opponentTotalScore} points.</p>`
         }
+        // const closePopup = document.querySelector('.close-pop-up');
+        // closePopup.addEventListener('click',onClick="window.location.reload();" )
     }
 });
 
