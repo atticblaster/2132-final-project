@@ -26,10 +26,10 @@ class DotaCharacter{
         this.link = link
     }
     linkToCharacterInfo(){
-        return `<a href="${this.link}">Dota 2 Wiki</a>`;
+        return `<a href="${this.link}">Dota 2 Character Wiki</a>`;
     }
 };
-
+//instantiate objects
 const slardar = new DotaCharacter("Slardar","Strength","https://dota2.fandom.com/wiki/Slardar");
 const timbersaw = new DotaCharacter("Timbersaw","Strength","https://dota2.fandom.com/wiki/Timbersaw");
 const abaddon = new DotaCharacter("Abaddon","Strength","https://dota2.fandom.com/wiki/Abaddon");
@@ -46,7 +46,7 @@ let opponentSelected = false;
 playerGame.style.display = "none";
 opponentGame.style.display = "none";
 
-//add event listner for player select
+//add event listener for player select
 slardarThumb.addEventListener('click', (e) => {
     html = ''
     e.preventDefault();
@@ -133,10 +133,10 @@ playButton.addEventListener('click', function(){
     opponentGame.style.display = "block";
     htmlPlayer = '';
     htmlOpponent = '';
-    let dice1 = Math.floor(Math.random() * 6) + 1;
-    let dice2 = Math.floor(Math.random() * 6) + 1;
-    let dice3 = Math.floor(Math.random() * 6) + 1;
-    let dice4 = Math.floor(Math.random() * 6) + 1;
+    const dice1 = Math.floor(Math.random() * 6) + 1;
+    const dice2 = Math.floor(Math.random() * 6) + 1;
+    const dice3 = Math.floor(Math.random() * 6) + 1;
+    const dice4 = Math.floor(Math.random() * 6) + 1;
     let playerOneScore = dice1 + dice2;
     if(dice1 == dice2){
         playerOneScore = (dice1 + dice2) * 2;

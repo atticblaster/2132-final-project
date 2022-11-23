@@ -17,7 +17,6 @@ html {
     box-sizing: inherit;
     }
 
-
 h1{
     color: #f7ede2;
     padding-left: 10px;
@@ -27,7 +26,7 @@ body{
     margin: 0;
     background-color: rgb(74, 73, 85);
     background-image: url('../images/lycan.jpg');
-    // border: solid 1 px black;
+    
 }
 
 img{
@@ -215,6 +214,8 @@ footer{
 
 .start-select{
     color: blanchedalmond;
+    margin: 0;
+    // padding: 0;
 }
 
 
