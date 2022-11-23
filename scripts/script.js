@@ -18,6 +18,25 @@ const opponentGame = document.querySelector('.opponent-game');
 const gameOver = document.querySelector('.game-over');
 const winner = document.querySelector('.winner');
 
+//class and object definitions
+class DotaCharacter{
+    constructor(name, heroType, link){
+        this.name = name;
+        this.heroType = heroType;
+        this.link = link
+    }
+    linkToCharacterInfo(){
+        return `<a href="${this.link}">Dota 2 Wiki</a>`;
+    }
+};
+
+const slardar = new DotaCharacter("Slardar","Strength","https://dota2.fandom.com/wiki/Slardar");
+const timbersaw = new DotaCharacter("Timbersaw","Strength","https://dota2.fandom.com/wiki/Timbersaw");
+const abaddon = new DotaCharacter("Abaddon","Strength","https://dota2.fandom.com/wiki/Abaddon");
+const queenOfPain = new DotaCharacter("Queen of Pain","Intelligence","https://dota2.fandom.com/wiki/Queen_of_Pain");
+const earthshaker = new DotaCharacter("Earthshaker","Strength","https://dota2.fandom.com/wiki/Earthshaker");
+const tidehunter = new DotaCharacter("Tidehunter","Strength","https://dota2.fandom.com/wiki/Tidehunter");
+
 let html = '';
 let htmlPlayer = '';
 let htmlOpponent = ''; 
@@ -36,8 +55,7 @@ slardarThumb.addEventListener('click', (e) => {
     html += `<h3>Player One</h3>`;
     html += `<img class="player" src="images/slardar.jpg" alt="slardar naga">`;
     html += `<button class="reset" onClick="window.location.reload();">Reset Pick</button>`
-    html += `<p class="bio"><strong>Slardar</strong> Born from the icy depths of Mensch Trench he is always looking forward to his next scrap.</p>`;
-    html += `<div class="goblin">`
+    html += `<p class="bio"><strong>Slardar</strong> Born from the icy depths of Mensch Trench he is always looking forward to his next scrap. ${slardar.linkToCharacterInfo()}</p>`;
     playerSelect.innerHTML = html;
     console.log(playerSelected);
 });
@@ -50,7 +68,7 @@ timbersawThumb.addEventListener('click', (e) => {
     html += `<h3>Player One</h3>`;
     html += `<img class="player" src="images/timbersaw.jpg" alt="timbersaw">`;
     html += `<button class="reset" onClick="window.location.reload();">Reset Pick</button>`
-    html += `<p class="bio"><strong>Timbersaw</strong> Born from the mines of Moonraker Flowe - Timbersaw is an anti-environmentalist.</p>`;
+    html += `<p class="bio"><strong>Timbersaw</strong> Born from the mines of Moonraker Flowe - Timbersaw is an anti-environmentalist. ${timbersaw.linkToCharacterInfo()}</p>`;
     playerSelect.innerHTML = html;
 });
 
@@ -62,7 +80,7 @@ abaddonThumb.addEventListener('click', (e) => {
     html += `<h3>Player One</h3>`;
     html += `<img class="player" src="images/abaddon.jpg" alt="abaddon">`;
     html += `<button class="reset" onClick="window.location.reload();">Reset Pick</button>`
-    html += `<p class="bio"><strong>Abaddon</strong> Born from the empty void where untold horrors are an everyday reality he thirsts for your soul.</p>`;
+    html += `<p class="bio"><strong>Abaddon</strong> Born from the empty void where untold horrors are an everyday reality he thirsts for your soul. ${abaddon.linkToCharacterInfo()}</p>`;
     playerSelect.innerHTML = html;
 })
 
@@ -75,7 +93,7 @@ queenOfPainThumb.addEventListener('click', (e) => {
     html += `<h3>Opponent</h3>`;
     html += `<img class="player" src="images/queenofpain.jpg" alt="queen of pain">`;
     html += `<button class="reset" onClick="window.location.reload();">Reset Pick</button>`
-    html += `<p class="bio"><strong>Queen of Pain</strong> Born from the depths of hell this seductive succubus will give you pleasure before she takes your life away.</p>`;
+    html += `<p class="bio"><strong>Queen of Pain</strong> Born from the depths of hell this seductive succubus will give you pleasure before she takes your life away. ${queenOfPain.linkToCharacterInfo()}</p>`;
     opponentSelect.innerHTML = html;
 });
 
@@ -87,7 +105,7 @@ earthshakerThumb.addEventListener('click', (e) => {
     html += `<h3>Opponent</h3>`;
     html += `<img class="player" src="images/earthshaker.webp" alt="earthshaker cow man">`;
     html += `<button class="reset" onClick="window.location.reload();">Reset Pick</button>`
-    html += `<p class="bio"><strong>Earthshaker</strong> Born from the pastures of another planet where bovines rule supreme. Watch out for this one - you might get milked!</p>`
+    html += `<p class="bio"><strong>Earthshaker</strong> Born from the pastures of another planet where bovines rule supreme. Watch out for this one - you might get milked! ${earthshaker.linkToCharacterInfo()}</p>`
     opponentSelect.innerHTML = html;
 });
 
@@ -99,22 +117,9 @@ tidehunterThumb.addEventListener('click', (e) => {
     html += `<h3>Opponent</h3>`;
     html += `<img class="player" src="images/tidehunter.jpg" alt="tidehunter">`;
     html += `<button class="reset" onClick="window.location.reload();">Reset Pick</button>`
-    html += `<p class="bio"><strong>Tidehunter</strong> Born from the depths of a sea near you - this horror from the deep can crush you in your sleep.</p>`
+    html += `<p class="bio"><strong>Tidehunter</strong> Born from the depths of a sea near you - this horror from the deep can crush you in your sleep. ${tidehunter.linkToCharacterInfo()}</p>`
     opponentSelect.innerHTML = html;
 });
-
-
-const dice = {
-    values : [1,2,3,4,5,6],
-    rollDice: function(){
-        html = '';
-        let dice1 = Math.floor(Math.random() * 6) + 1;
-        let dice2 = Math.floor(Math.random() * 6) + 1;
-        playerGame.innerHTML = html;
-        console.log('rolled dice');
-        console.log(dice1);
-    }
-}
 
 
 //event listener on the roll dice button and adding function capabilities

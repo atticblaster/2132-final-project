@@ -188,6 +188,7 @@ footer {
   top: 3px;
   border: 2px solid rgb(209, 121, 20);
   border-radius: 15px;
+  cursor: pointer;
 }
 
 .midway-line {
