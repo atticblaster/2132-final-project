@@ -26,7 +26,7 @@ class DotaCharacter{
         this.link = link
     }
     linkToCharacterInfo(){
-        return `<a href="${this.link}">Dota 2 Character Wiki</a>`;
+        return `<a href="${this.link}" target="_blank">${this.name} Wiki.</a>`;
     }
 };
 //instantiate objects
@@ -178,11 +178,11 @@ playButton.addEventListener('click', function(){
         console.log('Heres round 3');
         
         if(victor == playerOneTotalScore){
-            winner.innerHTML += `<p><button class="close-pop-up" onClick="window.location.reload();">❌</button>Player One is victorius and finished with ${playerOneTotalScore} points!! The opponent finished with ${opponentTotalScore} points. Click the "X" to start a new game.</p>`
+            winner.innerHTML += `<p><img class="aegis" src="images/aegis.jpeg" alt="the aegis"><button class="close-pop-up" onClick="window.location.reload();">❌</button>Player One is victorius and finished with ${playerOneTotalScore} points!! The opponent finished with ${opponentTotalScore} points. Click the "X" to start a new game.</p>`
         } else if(victor == opponentTotalScore){
-            winner.innerHTML += `<p><button class="close-pop-up" onClick="window.location.reload();">❌</button>The Opponent is victorius and finished with ${opponentTotalScore} points!! Player One finished with ${playerOneTotalScore} points. Click the "X" to start a new game.</p>`
+            winner.innerHTML += `<p><img class="aegis" src="images/aegis.jpeg" alt="the aegis"><button class="close-pop-up" onClick="window.location.reload();">❌</button>The Opponent is victorius and finished with ${opponentTotalScore} points!! Player One finished with ${playerOneTotalScore} points. Click the "X" to start a new game.</p>`
         } else{
-            winner.innerHTML += `<p><button class="close-pop-up" onClick="window.location.reload();">❌</button>We finished with a draw - wow! Player One finished with ${playerOneTotalScore} points and the Opponent finished with ${opponentTotalScore} points. Click the "X" to start a new game.</p>`
+            winner.innerHTML += `<p><img class="aegis" src="images/aegis.jpeg" alt="the aegis"><button class="close-pop-up" onClick="window.location.reload();">❌</button>We finished with a draw - wow! Player One finished with ${playerOneTotalScore} points and the Opponent finished with ${opponentTotalScore} points. Click the "X" to start a new game.</p>`
         }
         
     }

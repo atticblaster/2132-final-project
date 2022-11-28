@@ -50,6 +50,30 @@ footer {
   border-top: solid 1px black;
 }
 
+a {
+  text-decoration: none;
+  color: #0075A2;
+}
+
+a:hover {
+  background-color: lavenderblush;
+  color: lightseagreen;
+  border-radius: 8px;
+  padding: 2.27px;
+}
+
+a:visited {
+  color: rgb(216, 84, 194);
+}
+
+.aegis {
+  max-width: 70px;
+  height: auto;
+  float: left;
+  margin: 20px;
+  border: solid 2px black;
+}
+
 .player-game {
   background-color: rgb(51, 124, 33);
   padding: 10px;
