@@ -51,7 +51,6 @@ slardarThumb.addEventListener('click', (e) => {
     html = ''
     e.preventDefault();
     playerSelected = true;
-    // playerSelect.style.display = "none";
     html += `<h3>Player One</h3>`;
     html += `<img class="player" src="images/slardar.jpg" alt="slardar naga">`;
     html += `<button class="reset" onClick="window.location.reload();">Reset Pick</button>`
@@ -64,7 +63,6 @@ timbersawThumb.addEventListener('click', (e) => {
     html = ''
     e.preventDefault();
     playerSelected = true;
-    // playerSelect.style.display = "none";
     html += `<h3>Player One</h3>`;
     html += `<img class="player" src="images/timbersaw.jpg" alt="timbersaw">`;
     html += `<button class="reset" onClick="window.location.reload();">Reset Pick</button>`
@@ -76,7 +74,6 @@ abaddonThumb.addEventListener('click', (e) => {
     html = ''
     e.preventDefault();
     playerSelected = true;
-    // playerSelect.style.display = "none";
     html += `<h3>Player One</h3>`;
     html += `<img class="player" src="images/abaddon.jpg" alt="abaddon">`;
     html += `<button class="reset" onClick="window.location.reload();">Reset Pick</button>`
@@ -89,7 +86,6 @@ queenOfPainThumb.addEventListener('click', (e) => {
     html = ''
     e.preventDefault();
     opponentSelected = true;
-    // oppentSelect.style.display = "none";
     html += `<h3>Opponent</h3>`;
     html += `<img class="player" src="images/queenofpain.jpg" alt="queen of pain">`;
     html += `<button class="reset" onClick="window.location.reload();">Reset Pick</button>`
@@ -101,7 +97,6 @@ earthshakerThumb.addEventListener('click', (e) => {
     html = ''
     e.preventDefault();
     opponentSelected = true;
-    // opponentSelect.style.display = "none";
     html += `<h3>Opponent</h3>`;
     html += `<img class="player" src="images/earthshaker.webp" alt="earthshaker cow man">`;
     html += `<button class="reset" onClick="window.location.reload();">Reset Pick</button>`
@@ -113,7 +108,6 @@ tidehunterThumb.addEventListener('click', (e) => {
     html = '';
     e.preventDefault();
     opponentSelected = true;
-    // opponentSelect.style.display = "none";
     html += `<h3>Opponent</h3>`;
     html += `<img class="player" src="images/tidehunter.jpg" alt="tidehunter">`;
     html += `<button class="reset" onClick="window.location.reload();">Reset Pick</button>`

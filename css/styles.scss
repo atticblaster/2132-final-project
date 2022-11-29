@@ -32,8 +32,8 @@ body{
 img{
     max-width: 100%;
     height: auto;
-    margin: 0;
-    padding: 0;
+    margin: 10px;
+    // padding: 10px;
 }
 
 p{
@@ -133,6 +133,7 @@ a:visited{
     height: 50px;
     background-color: darkgray;
     color: lightgreen;
+    cursor: pointer;
 }
 
 .player{
@@ -184,7 +185,7 @@ a:visited{
     display: flex;
     flex-wrap: wrap;
     max-width: 60%;
-    flex: 2;
+    // flex: 2;
     border-radius: 12px;
     margin-top: 4px;
     padding: 10px;
@@ -200,8 +201,8 @@ a:visited{
 }
 
 .thumbs{
-    width: 118px;
-    height: 127px;
+    width: 136px;
+    height: 136px;
     object-fit: cover;
     border: 1px solid black;
     border-radius: 20px;
@@ -234,16 +235,13 @@ a:visited{
 }
 
 .midway-line{
-    // background-image: linear-gradient(to right, purple, blue, yellow, );
-    // background-color: #8c2f39;
-    // display: block;
     width: 100%;
 }
 
 .start-select{
     color: blanchedalmond;
     margin: 0;
-    // padding: 0;
+    
 }
 
 
